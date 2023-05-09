@@ -55,7 +55,7 @@ def handle_message(event):
     msg = event.message.text
     """ line_bot_api.reply_message(event.reply_token, TextSendMessage(msg)) """
     if msg.find('查詢未完成工單') != -1:
-        url = 'https://sys.leadyoung.com.tw/assets/Home/LINE_BOT_CIPS?ID='+msg
+        url = 'https://sys.leadyoung.com.tw/assets/Home/LINE_BOT_LYE_QueryWOProgress?ID='+msg
         # 發送GET請求
         response = requests.get(url)
         # 解析HTML內容
