@@ -11,14 +11,9 @@ from linebot.models import *
 
 # ======python的函數庫==========
 import requests
-import tempfile
 import os
-import datetime
-import openai
-import time
 from bs4 import BeautifulSoup
 # ======python的函數庫==========
-import configparser
 app = Flask(__name__)
 
 """ config = configparser.ConfigParser()
