@@ -12,7 +12,6 @@ from linebot.models import *
 # ======python的函數庫==========
 import requests
 import os
-from bs4 import BeautifulSoup
 # ======python的函數庫==========
 app = Flask(__name__)
 
