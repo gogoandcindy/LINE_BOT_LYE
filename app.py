@@ -62,10 +62,10 @@ def handle_message(event):
         soup = BeautifulSoup(response.text, 'html.parser')
         time.sleep(5)
     elif msg.find('ASK GPT') != -1:
-        GPT_answer = GPT_response(msg)
+        GPT_answer = GPT_response(msg.replace('ASK GPT', ''))
         url = 'https://notify-api.line.me/api/notify'
 
-        access_token = 'jtLHqny7gmlDZ8fM2Tm9gGA389Z71M1Cr6HwFhJVrUY'
+        access_token = 'O0zZ79zVFC4FV0GkbvsWLdTUBrPdXuIrIB1IHLieAYC'
 
         # 設置請求標頭
         headers = {
@@ -88,5 +88,4 @@ def GPT_response(text):
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run()
