@@ -65,7 +65,7 @@ def handle_message(event):
         GPT_answer = GPT_response(msg.replace('ASK GPT', ''))
         url = 'https://notify-api.line.me/api/notify'
 
-        access_token = 'O0zZ79zVFC4FV0GkbvsWLdTUBrPdXuIrIB1IHLieAYC'
+        access_token = 'jtLHqny7gmlDZ8fM2Tm9gGA389Z71M1Cr6HwFhJVrUY'
 
         # 設置請求標頭
         headers = {
