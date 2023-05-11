@@ -58,32 +58,7 @@ def handle_message(event):
         url = 'https://sys.leadyoung.com.tw/assets/Home/LINE_BOT_LYE_QueryWOProgress?ID='+msg
         # 發送GET請求
         response = requests.get(url)
-        # 解析HTML內容
-        soup = BeautifulSoup(response.text, 'html.parser')
-    elif msg.find('ASK GPT') != -1:
-        GPT_answer = GPT_response(msg.replace('ASK GPT', ''))
-        url = 'https://notify-api.line.me/api/notify'
-
-        access_token = 'jtLHqny7gmlDZ8fM2Tm9gGA389Z71M1Cr6HwFhJVrUY'
-
-        # 設置請求標頭
-        headers = {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Bearer ' + access_token
-        }
-        # 發出 HTTP POST 請求
-        response = requests.post(url, headers=headers,
-                                 data={'message': GPT_answer})
-
-
-def GPT_response(text):
-    # 接收回應
-    response = openai.Completion.create(
-        model="text-davinci-003", prompt=text, temperature=0.5, max_tokens=500)
-    print(response)
-    # 重組回應
-    answer = response['choices'][0]['text'].replace('。', '')
-    return answer
+        response.close()
 
 
 if __name__ == "__main__":
