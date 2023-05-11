@@ -60,7 +60,6 @@ def handle_message(event):
         response = requests.get(url)
         # 解析HTML內容
         soup = BeautifulSoup(response.text, 'html.parser')
-        time.sleep(5)
     elif msg.find('ASK GPT') != -1:
         GPT_answer = GPT_response(msg.replace('ASK GPT', ''))
         url = 'https://notify-api.line.me/api/notify'
